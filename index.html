@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es" class="no-webgl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PunAcc Conexión · Internet por fibra óptica</title>
+  <meta name="description" content="PunAcc Conexión: internet por fibra óptica para hogares y negocios. Planes de 100, 150 y 200 MB desde $75.000 al mes, con soporte técnico.">
+  <meta name="theme-color" content="#020A30">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="css/styles.css?v=29">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner" data-aos="fade-down" data-aos-duration="700">
+      <a href="#inicio" class="brand" aria-label="PunAcc Conexión, inicio">
+        <img src="assets/img/logo.png" alt="" class="brand__logo" onerror="this.remove()">
+       
+      </a>
+
+      <nav class="nav__links" id="menu" aria-label="Principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#planes">Planes</a>
+        <a href="#cobertura">Cobertura</a>
+        <a href="#contacto">Contacto</a>
+        <a class="btn btn--primary btn--sm nav__cta" href="https://wa.me/573202038621?text=Hola%20PunAcc%2C%20quiero%20contratar%20internet" target="_blank" rel="noopener">Contratar por WhatsApp</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <!-- Escena 3D: router con ondas Wi-Fi y pulsos de datos -->
+      <canvas class="hero__canvas" id="scene" aria-hidden="true"></canvas>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <div class="wrap hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow" data-aos="fade-up" data-aos-delay="150">
+            <span class="eyebrow__dot"></span>
+            Tu éxito, nuestra conexión
+          </p>
+
+          <h1 class="hero__title" data-aos="fade-up" data-aos-delay="300">
+            Internet por <span class="accent">fibra óptica</span> para tu hogar y tu negocio
+          </h1>
+
+          <p class="hero__lead" data-aos="fade-up" data-aos-delay="450">
+            Planes de 100, 150 y 200&nbsp;MB con instalación en tu zona y soporte técnico cuando lo necesites.
+          </p>
+
+          <div class="hero__actions" data-aos="fade-up" data-aos-delay="600">
+            <a href="#planes" class="btn btn--primary">
+              Ver planes
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="https://wa.me/573202038621?text=Hola%20PunAcc%2C%20quiero%20contratar%20internet" class="btn btn--ghost" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="wa"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.2 1.4Z"/></svg>
+              Contratar por WhatsApp
+            </a>
+          </div>
+
+          <p class="hero__price" data-aos="fade-up" data-aos-delay="700">
+            Desde <strong>$75.000</strong> al mes
+          </p>
+        </div>
+      </div>
+
+      <!-- Franja de beneficios -->
+      <div class="wrap hero__perks">
+        <ul class="perks" data-aos="fade-up" data-aos-delay="850" data-aos-offset="0">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>
+            <span>Alta velocidad</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+            <span>Conexión estable</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 13v8M9 21h6"/><circle cx="12" cy="11" r="2"/><path d="M8.2 7.2a5.4 5.4 0 0 0 0 7.6M15.8 7.2a5.4 5.4 0 0 1 0 7.6M5.4 4.4a9.4 9.4 0 0 0 0 13.2M18.6 4.4a9.4 9.4 0 0 1 0 13.2"/></svg>
+            <span>Cobertura en tu zona</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-2 2.5-5 2.5"/></svg>
+            <span>Soporte técnico</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ QUIÉNES SOMOS ============ -->
+    <section class="about" id="nosotros">
+      <div class="wrap">
+        <div class="about__grid">
+          <div class="about__copy">
+            <p class="eyebrow" data-aos="fade-up">
+              <span class="eyebrow__dot"></span>
+              Quiénes somos
+            </p>
+            <h2 class="about__title" data-aos="fade-up" data-aos-delay="100">
+              Dos jóvenes emprendedores al servicio de <span class="accent">tu conexión</span>
+            </h2>
+            <p class="about__lead" data-aos="fade-up" data-aos-delay="200">
+              Convertimos nuestra experiencia y pasión por las telecomunicaciones en una empresa con propósito.
+              En el trabajo de campo aprendimos que una buena conexión no depende solo de la tecnología:
+              también nace de escuchar, cumplir la palabra y tratar a cada persona con respeto.
+            </p>
+            <p class="about__text" data-aos="fade-up" data-aos-delay="300">
+              Somos una empresa joven con grandes aspiraciones: crecer con bases firmes, aprender
+              constantemente y construir relaciones duraderas con hogares y negocios.
+            </p>
+
+            <div class="about__stat" data-aos="fade-up" data-aos-delay="400">
+              <p class="about__num"><span data-count="100">100</span><small>%</small></p>
+              <p class="about__stat-text">Servicio confiable, responsable y hecho al 100&nbsp;%</p>
+            </div>
+          </div>
+
+          <!-- Foto TEMPORAL (Tan Duong, Unsplash): reemplazar por una foto real de los fundadores -->
+          <figure class="about__media" data-aos="fade-left" data-aos-delay="150">
+            <img src="assets/img/equipo-temporal.jpg?v=2" alt="Los dos fundadores de PunAcc Conexión" width="1400" height="934" loading="lazy" data-source="stand-in">
+            <span class="about__badge">
+              <span class="eyebrow__dot"></span>
+              Instalación y soporte en tu zona
+            </span>
+          </figure>
+        </div>
+
+        <ul class="values">
+          <li class="value" data-aos="fade-up" data-aos-delay="0">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg>
+            <h3>Escuchamos primero</h3>
+            <p>Cada hogar y negocio es diferente: entendemos lo que necesitas antes de recomendarte un plan.</p>
+          </li>
+          <li class="value" data-aos="fade-up" data-aos-delay="120">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+            <h3>Servicio confiable</h3>
+            <p>Cumplimos lo acordado en precio, velocidad y fecha, porque tu confianza es lo que nos hace crecer.</p>
+          </li>
+          <li class="value" data-aos="fade-up" data-aos-delay="240">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-2 2.5-5 2.5"/></svg>
+            <h3>Acompañamiento continuo</h3>
+            <p>Después de instalar seguimos pendientes de tu servicio para que tu conexión funcione siempre bien.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Siguiente sección (se construye en el próximo paso) -->
+    <section class="next" id="planes">
+      <div class="wrap">
+        <h2>Planes de internet</h2>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/main.js?v=29"></script>
+  <script type="module" src="js/router.js?v=29"></script>
+</body>
+</html>
