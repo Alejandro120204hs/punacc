@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-  <link rel="stylesheet" href="css/styles.css?v=37">
+  <link rel="stylesheet" href="css/styles.css?v=40">
 
   <script type="importmap">
   {
@@ -249,16 +249,81 @@
       </div>
     </section>
 
-    <!-- Siguiente sección (se construye en el próximo paso) -->
-    <section class="next" id="planes">
+    <!-- ============ PLANES ============ -->
+    <section class="plans" id="planes">
       <div class="wrap">
-        <h2>Planes de internet</h2>
+        <header class="mv__head">
+          <p class="eyebrow" data-aos="fade-up">
+            <span class="eyebrow__dot"></span>
+            Planes de internet
+          </p>
+          <h2 class="mv__title" data-aos="fade-up" data-aos-delay="100">
+            Elige la velocidad para <span class="accent">tu hogar o negocio</span>
+          </h2>
+          <p class="plans__sub" data-aos="fade-up" data-aos-delay="200">
+            Internet por fibra óptica con instalación en tu zona y soporte técnico cuando lo necesites.
+          </p>
+        </header>
+
+        <div class="plans__grid">
+          <article class="mv-card plan" data-spot data-aos="fade-up" data-aos-delay="0">
+            <div class="plan__head">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0"/><path d="M5.5 12.5a9.5 9.5 0 0 1 13 0"/><path d="M8.7 15.8a5 5 0 0 1 6.6 0"/><circle cx="12" cy="19" r="1.2"/></svg>
+              <p class="plan__name">Básico</p>
+            </div>
+            <p class="plan__speed"><span data-count="100">100</span><small>MB</small></p>
+            <div class="plan__meter" aria-hidden="true"><span style="--w: 0.5"></span></div>
+            <p class="plan__price"><strong>$75.000</strong><span>/mes</span></p>
+            <ul class="plan__list">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Internet 100&nbsp;% fibra óptica</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Ideal para navegar, redes sociales y clases virtuales</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Soporte técnico en tu zona</li>
+            </ul>
+            <a class="btn btn--ghost plan__cta" href="https://wa.me/573202038621?text=Hola%20PunAcc%2C%20quiero%20contratar%20el%20plan%20Básico%20de%20100%20MB" target="_blank" rel="noopener">Contratar plan Básico</a>
+          </article>
+          <article class="mv-card plan plan--featured" data-spot data-aos="fade-up" data-aos-delay="150">
+            <span class="plan__badge">★ Más popular</span>
+            <div class="plan__head">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0"/><path d="M5.5 12.5a9.5 9.5 0 0 1 13 0"/><path d="M8.7 15.8a5 5 0 0 1 6.6 0"/><circle cx="12" cy="19" r="1.2"/></svg>
+              <p class="plan__name">Hogar</p>
+            </div>
+            <p class="plan__speed"><span data-count="150">150</span><small>MB</small></p>
+            <div class="plan__meter" aria-hidden="true"><span style="--w: 0.75"></span></div>
+            <p class="plan__price"><strong>$85.000</strong><span>/mes</span></p>
+            <ul class="plan__list">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Internet 100&nbsp;% fibra óptica</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Ideal para familias, streaming en HD y varios equipos</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Soporte técnico en tu zona</li>
+            </ul>
+            <a class="btn btn--primary plan__cta" href="https://wa.me/573202038621?text=Hola%20PunAcc%2C%20quiero%20contratar%20el%20plan%20Hogar%20de%20150%20MB" target="_blank" rel="noopener">Contratar plan Hogar</a>
+          </article>
+          <article class="mv-card plan" data-spot data-aos="fade-up" data-aos-delay="300">
+            <div class="plan__head">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0"/><path d="M5.5 12.5a9.5 9.5 0 0 1 13 0"/><path d="M8.7 15.8a5 5 0 0 1 6.6 0"/><circle cx="12" cy="19" r="1.2"/></svg>
+              <p class="plan__name">Pro</p>
+            </div>
+            <p class="plan__speed"><span data-count="200">200</span><small>MB</small></p>
+            <div class="plan__meter" aria-hidden="true"><span style="--w: 1"></span></div>
+            <p class="plan__price"><strong>$100.000</strong><span>/mes</span></p>
+            <ul class="plan__list">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Internet 100&nbsp;% fibra óptica</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Ideal para teletrabajo, gaming y negocios</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Soporte técnico en tu zona</li>
+            </ul>
+            <a class="btn btn--ghost plan__cta" href="https://wa.me/573202038621?text=Hola%20PunAcc%2C%20quiero%20contratar%20el%20plan%20Pro%20de%20200%20MB" target="_blank" rel="noopener">Contratar plan Pro</a>
+          </article>
+        </div>
+
+        <p class="plans__help" data-aos="fade-up">
+          ¿No sabes cuál elegir?
+          <a href="https://wa.me/573202038621?text=Hola%20PunAcc%2C%20quiero%20asesor%C3%ADa%20para%20elegir%20un%20plan" target="_blank" rel="noopener">Escríbenos por WhatsApp y te asesoramos</a>
+        </p>
       </div>
     </section>
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="js/main.js?v=37"></script>
-  <script type="module" src="js/router.js?v=37"></script>
+  <script src="js/main.js?v=40"></script>
+  <script type="module" src="js/router.js?v=40"></script>
 </body>
 </html>

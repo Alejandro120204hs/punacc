@@ -560,9 +560,99 @@ section[id] { scroll-margin-top: var(--nav-h); }
   .tl__cards { grid-template-columns: 1fr; }
 }
 
-/* Sección siguiente (temporal) */
-.next { min-height: 100vh; padding-top: 120px; background: var(--bg-deep); }
-.next h2 { font-size: clamp(2rem, 4vw, 3rem); }
+/* ---------- Planes ---------- */
+.plans {
+  position: relative;
+  padding-block: clamp(80px, 13vh, 150px);
+  background:
+    radial-gradient(900px 560px at 50% 55%, rgba(30, 107, 255, .16), transparent 70%),
+    var(--bg-deep);
+  overflow: hidden;
+}
+/* Menos aire entre Misión y visión y Planes */
+.mv { padding-bottom: clamp(48px, 7vh, 80px); }
+.plans { padding-top: clamp(56px, 8vh, 90px); }
+.plans__sub { margin: 1rem auto 0; max-width: 560px; color: var(--muted); font-size: 1.05rem; }
+
+.plans__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+.plan { text-align: left; }
+.plan__head { display: flex; align-items: center; gap: .8rem; }
+.plan__head svg {
+  width: 44px; height: 44px; padding: 10px;
+  border-radius: 13px;
+  background: rgba(30, 107, 255, .16);
+  box-shadow: 0 0 0 1px rgba(0, 200, 255, .25) inset;
+  fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.plan__name {
+  margin: 0;
+  font-family: var(--font-head); font-weight: 700;
+  font-size: .85rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--accent);
+}
+.plan__speed {
+  margin: 1.4rem 0 0;
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(3rem, 4.4vw, 4.2rem); line-height: 1.1; letter-spacing: -.03em;
+  font-variant-numeric: tabular-nums;
+}
+.plan__speed small { font-size: .38em; margin-left: .3em; color: var(--muted); letter-spacing: 0; }
+
+/* Barra de velocidad: se llena al aparecer según los MB */
+.plan__meter { margin-top: .9rem; height: 6px; border-radius: 6px; background: rgba(30, 107, 255, .18); overflow: hidden; }
+.plan__meter span {
+  display: block; height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  box-shadow: 0 0 12px rgba(0, 200, 255, .6);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 1.4s var(--ease) .4s;
+}
+.plan.aos-animate .plan__meter span,
+.no-aos .plan__meter span { transform: scaleX(var(--w)); }
+
+.plan__price { margin: 1.5rem 0 0; display: flex; align-items: baseline; gap: .35rem; }
+.plan__price strong { font-family: var(--font-head); font-size: clamp(1.7rem, 2.2vw, 2.1rem); font-weight: 800; }
+.plan__price span { color: var(--muted); }
+
+.plan__list { list-style: none; margin: 1.4rem 0 0; padding: 1.4rem 0 0; border-top: 1px solid var(--line); display: grid; gap: .75rem; }
+.plan__list li { display: flex; align-items: flex-start; gap: .6rem; color: var(--text); opacity: .9; font-size: .98rem; }
+.plan__list svg {
+  flex: none; width: 20px; height: 20px; margin-top: .15rem; padding: 3px;
+  border-radius: 50%;
+  background: rgba(0, 200, 255, .14);
+  fill: none; stroke: var(--accent); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round;
+}
+.plan__cta { width: 100%; margin-top: 1.8rem; }
+
+/* Plan destacado */
+.plan--featured {
+  padding-block: clamp(2.4rem, 3.6vw, 3.2rem);
+  border-color: rgba(0, 200, 255, .45);
+  background: linear-gradient(165deg, rgba(10, 40, 130, .85), rgba(2, 10, 48, .8));
+  box-shadow: 0 0 0 1px rgba(0, 200, 255, .15), 0 30px 80px -25px rgba(0, 200, 255, .45);
+}
+.plan__badge {
+  position: absolute; top: 1.1rem; right: 1.1rem;
+  padding: .35rem .8rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  color: #fff; font-size: .78rem; font-weight: 700; letter-spacing: .02em;
+  box-shadow: 0 6px 20px -6px rgba(0, 200, 255, .8);
+}
+
+.plans__help { margin: clamp(36px, 6vh, 56px) 0 0; text-align: center; color: var(--muted); }
+.plans__help a { color: var(--accent); font-weight: 700; background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat; transition: background-size .3s var(--ease); }
+.plans__help a:hover { background-size: 100% 2px; }
+
+@media (max-width: 960px) {
+  .plans__grid { grid-template-columns: 1fr; max-width: 480px; }
+  .plan--featured { order: -1; }
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {

@@ -151,6 +151,7 @@
   });
 
   // Animaciones de entrada con AOS
+  if (reducedMotion) document.documentElement.classList.add('no-aos');
   if (window.AOS) {
     AOS.init({
       duration: 900,
@@ -162,5 +163,6 @@
   } else {
     // Si el CDN no carga, mostramos todo sin animación
     document.querySelectorAll('[data-aos]').forEach((el) => el.removeAttribute('data-aos'));
+    document.documentElement.classList.add('no-aos');
   }
 })();
