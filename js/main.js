@@ -20,6 +20,10 @@
   menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
 
+  // Año actual en el footer
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
   // Resaltar en la barra la sección que se está viendo
   const navLinks = [...menu.querySelectorAll('a[href^="#"]:not(.btn)')];
   const tracked = navLinks
