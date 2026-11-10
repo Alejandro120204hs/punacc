@@ -1,0 +1,9 @@
+# Página de prueba en tamaño celular (solo local)
+_movil.html
+
+# Originales pesados del favicon: la página usa favicon-32/180/192.png
+assets/img/favicon.png
+assets/img/favicon2.png
+
+# Foto temporal, ya reemplazada por empresa.png
+assets/img/equipo-temporal.jpg
