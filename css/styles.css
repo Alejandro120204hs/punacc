@@ -133,6 +133,10 @@ h1, h2, h3 { font-family: var(--font-head); margin: 0; line-height: 1.08; letter
   box-shadow: 0 10px 30px -18px rgba(0, 0, 0, .8);
 }
 .nav__inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+/* Entrada de la barra al cargar: solo opacidad. Nunca usar transform aquí:
+   encerraría el menú móvil (position: fixed) dentro de la barra */
+.nav__inner { animation: nav-in .7s ease-out backwards; }
+@keyframes nav-in { from { opacity: 0; } }
 
 .brand { display: flex; align-items: center; gap: .6rem; }
 .brand__logo { height: 52px; width: auto; } /* mismo tamaño en la barra y en el footer */
@@ -790,22 +794,62 @@ section[id] { scroll-margin-top: var(--nav-h); }
   .perks li:nth-child(n+3) { border-top: 1px solid var(--line); }
   .hero__shade {
     background:
-      linear-gradient(180deg, rgba(0, 2, 22, .25) 0%, rgba(0, 2, 22, .5) 45%, rgba(0, 2, 22, .55) 70%, var(--bg-deep) 100%);
+      linear-gradient(180deg, rgba(0, 2, 22, .3) 0%, rgba(0, 2, 22, .5) 45%, rgba(0, 2, 22, .18) 66%, rgba(0, 2, 22, .45) 86%, var(--bg-deep) 100%);
   }
 }
 
 @media (max-width: 820px) {
   .nav__toggle { display: block; }
+  .brand { position: relative; z-index: 2; }
+
+  /* Menú móvil a pantalla completa */
   .nav__links {
     position: fixed; inset: 0;
-    flex-direction: column; justify-content: center; gap: 1.6rem;
-    font-size: 1.35rem;
-    background: rgba(0, 2, 22, .98);
+    flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 0;
+    padding: calc(var(--nav-h) + 28px) var(--gutter) calc(28px + env(safe-area-inset-bottom));
+    background:
+      radial-gradient(520px 380px at 100% 0%, rgba(30, 107, 255, .28), transparent 65%),
+      radial-gradient(420px 320px at 0% 100%, rgba(0, 200, 255, .12), transparent 70%),
+      var(--bg-deep);
+    counter-reset: navitem;
+    overflow-y: auto;
     opacity: 0; visibility: hidden;
     transition: opacity .3s, visibility .3s;
   }
   .nav__links.is-open { opacity: 1; visibility: visible; }
-  .nav__cta { margin-top: 1rem; }
+
+  .nav__links a:not(.btn) {
+    counter-increment: navitem;
+    display: flex; align-items: baseline; gap: 1rem;
+    padding: 1.05rem 0;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--font-head); font-size: 1.55rem; font-weight: 700; letter-spacing: -.01em;
+    color: var(--text);
+    opacity: 0; transform: translateY(14px);
+    transition: opacity .4s var(--ease), transform .4s var(--ease), color .2s;
+  }
+  .nav__links a:not(.btn)::before {
+    content: counter(navitem, decimal-leading-zero);
+    font-family: var(--font-body); font-size: .8rem; font-weight: 700; letter-spacing: .12em;
+    color: var(--accent);
+  }
+  .nav__links a:not(.btn)::after { display: none; }
+  .nav__links a.is-active { color: var(--accent); }
+
+  .nav__cta {
+    margin-top: auto; width: 100%; --h: 56px; font-size: 1rem;
+    opacity: 0; transform: translateY(14px);
+    transition: opacity .4s var(--ease), transform .4s var(--ease);
+  }
+
+  /* Al abrir: los enlaces entran uno tras otro */
+  .nav__links.is-open a { opacity: 1; transform: none; }
+  .nav__links.is-open a:nth-child(1) { transition-delay: .05s; }
+  .nav__links.is-open a:nth-child(2) { transition-delay: .1s; }
+  .nav__links.is-open a:nth-child(3) { transition-delay: .15s; }
+  .nav__links.is-open a:nth-child(4) { transition-delay: .2s; }
+  .nav__links.is-open a:nth-child(5) { transition-delay: .25s; }
+  .nav__links.is-open .nav__cta { transition-delay: .3s; }
 }
 
 @media (max-width: 560px) {
@@ -817,4 +861,13 @@ section[id] { scroll-margin-top: var(--nav-h); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+}
+
+/* ---------- Celular: menos espacio entre secciones ---------- */
+@media (max-width: 820px) {
+  .about, .mv, .plans, .contact { padding-block: 56px; }
+  .mv__head { margin-bottom: 36px; }
+  .values { margin-top: 36px; }
+  .mv__close { margin-top: 40px; }
+  .plans__help { margin-top: 28px; }
 }

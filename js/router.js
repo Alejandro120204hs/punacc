@@ -307,7 +307,7 @@ function init() {
       basePos.set(halfW * 0.42, -1.25, 0);
       root.scale.setScalar(Math.min(1.35, halfW * 0.6 / 3.2));
     } else {
-      basePos.set(halfW * 0.25, -2.4, 0);
+      basePos.set(halfW * 0.25, -1.15, 0); // celular: más arriba para que se vea entre los botones y los beneficios
       root.scale.setScalar(0.75);
     }
     root.position.copy(basePos);
