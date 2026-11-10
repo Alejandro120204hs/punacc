@@ -1,0 +1,14 @@
+# Una sola dirección para Google: https://punacc.com/
+RewriteEngine On
+
+# http -> https
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# www.punacc.com -> punacc.com
+RewriteCond %{HTTP_HOST} ^www\.punacc\.com$ [NC]
+RewriteRule ^(.*)$ https://punacc.com/$1 [L,R=301]
+
+# /index.html -> /
+RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
+RewriteRule ^index\.html$ https://punacc.com/ [L,R=301]
